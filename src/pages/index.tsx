@@ -8,6 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { useEffect } from "react";
 
 export default function Home() {
   type Lesson = {
@@ -29,6 +30,12 @@ export default function Home() {
       disabled: true,
     },
   ];
+
+  useEffect(() => {
+    fetch("/api/question")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  });
 
   return (
     <>
