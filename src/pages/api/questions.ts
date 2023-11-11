@@ -9,12 +9,14 @@ export default async function handler(
   res.status(200).json([
     {
       category: "x",
-      id: 1,
+      seqNumber: 1,
+      type: "single",
     },
     {
       category: "y",
       disabled: true,
-      id: 2,
+      seqNumber: 2,
+      type: "single",
     },
   ]);
 }

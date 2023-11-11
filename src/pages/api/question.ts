@@ -3,12 +3,13 @@ import mongoose from "mongoose";
 
 export type Question = {
   category: string;
-  id: number;
+  type: "single" | "multi" | "match" | "speech";
   question?: string;
   availableFields?: string[];
   correctFields?: string[];
   disabled?: boolean;
-  seqNumber?: number;
+  reason?: string;
+  seqNumber: number;
 };
 
 export default async function handler(
@@ -30,6 +31,7 @@ export default async function handler(
 
   res.status(200).json({
     category: "x",
+    type: "single",
     question: "what is the best beer?",
     correctFields: ["new glarus"],
     availableFields: ["new glarus", "miller lite"],

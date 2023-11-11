@@ -40,7 +40,7 @@ export default function Home() {
               className={`w-[350px] m-2 ${lesson.disabled ? "bg-red-200" : ""}`}
             >
               <Link
-                href={`/lessons/${lesson.id}`}
+                href={`/questions/${lesson.seqNumber}`}
                 style={{
                   pointerEvents: lesson.disabled ? "none" : "auto",
                 }}
