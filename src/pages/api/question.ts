@@ -1,30 +1,39 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mongoose from "mongoose";
 
-type SingleChoiceQuestion = {
-  question: string;
-  answer: string;
-  options: string[];
+export type Question = {
+  category: string;
+  id: number;
+  question?: string;
+  availableFields?: string[];
+  correctFields?: string[];
+  disabled?: boolean;
+  seqNumber?: number;
 };
 
-type PronounciationQuestion = {};
-
-type MultiChoiceOption = {};
-
-type Question =
-  | SingleChoiceQuestion
-  | PronounciationQuestion
-  | MultiChoiceOption;
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Question>,
 ) {
+  const questionSchema = new mongoose.Schema({
+    category: String,
+    question: String,
+    availableFields: [String],
+    correctFields: [String],
+    seqNumber: Number,
+  });
+
+  const questionModel =
+    mongoose.models.Question || mongoose.model("Question", questionSchema);
   connectToMongo(res);
+  await mongoose.connection.close();
+
   res.status(200).json({
+    category: "x",
     question: "what is the best beer?",
-    answer: "new glarus",
-    options: ["new glarus", "miller lite"],
+    correctFields: ["new glarus"],
+    availableFields: ["new glarus", "miller lite"],
+    seqNumber: 1,
   });
 }
 
@@ -36,6 +45,4 @@ export async function connectToMongo(res: NextApiResponse) {
   }
   const uri = `mongodb+srv://${mongo_user}:${mongo_password}@cluster0.29nf6.mongodb.net/?retryWrites=true&w=majority`;
   await mongoose.connect(uri).catch((err) => console.error(err));
-  console.log("hi");
-  await mongoose.connection.close();
 }
