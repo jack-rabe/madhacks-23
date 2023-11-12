@@ -23,6 +23,7 @@ export default function Home() {
         }
       })
       .then((res) => {
+        console.log(res);
         setLessons(res);
       });
   }, []);
@@ -31,25 +32,26 @@ export default function Home() {
     <>
       <div>
         <h2 className="p-3 m-4 text-2xl">Questions</h2>
-        <div className="grid grid-cols-4">
+        <div className="grid grid-cols-1">
           {lessons.map((lesson) => (
             <Card
               key={lesson.category}
-              className={`w-[350px] m-2 ${lesson.disabled ? "bg-red-200" : ""}`}
+              className={`w-3/4 m-2 ${lesson.disabled ? "bg-red-200" : ""}`}
             >
               <Link
                 href={`/questions/${lesson.seqNumber}`}
+                className="flex items-center justify-between"
                 style={{
                   pointerEvents: lesson.disabled ? "none" : "auto",
                 }}
               >
-                <CardHeader>
-                  <CardTitle>{lesson.category}</CardTitle>
-                </CardHeader>
-                <CardContent>image here?</CardContent>
-                <CardFooter className="flex justify-between">
-                  <Button disabled={lesson.disabled}>Learn</Button>
-                </CardFooter>
+                <div className="text-2xl p-4">{lesson.category}</div>
+                <Button
+                  className="text-2xl p-4 mr-4"
+                  disabled={lesson.disabled}
+                >
+                  Learn
+                </Button>
               </Link>
             </Card>
           ))}

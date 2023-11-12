@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Question } from "@/pages/api/question";
 import { Button } from "./ui/button";
+import { Question } from "@/lib/utils";
 
 type Props = { question: Question };
 export default function SingleQuestion({ question }: Props) {

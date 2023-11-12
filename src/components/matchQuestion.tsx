@@ -1,4 +1,4 @@
-import { Question } from "@/pages/api/question";
+import { Question } from "@/lib/utils";
 
 type Props = { question: Question };
 export default function MatchQuestion({ question }: Props) {

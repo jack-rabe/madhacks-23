@@ -1,9 +1,9 @@
 "use client";
 
 import { Checkbox } from "@/components/ui/checkbox";
-import { Question } from "@/pages/api/question";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { Question } from "@/lib/utils";
 
 type Props = { question: Question };
 export default function MultiQuestion({ question }: Props) {

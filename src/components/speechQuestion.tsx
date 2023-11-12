@@ -1,4 +1,4 @@
-import { Question } from "@/pages/api/question";
+import { Question } from "@/lib/utils";
 import { Button } from "./ui/button";
 
 type Props = { question: Question };
