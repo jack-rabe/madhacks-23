@@ -33,8 +33,8 @@ export default function Home() {
     <>
       <div>
         <div className="m-4 flex justify-center">
-          {/* todo - stop hardcoding 24 */}
-          <Progress value={(score / 24) * 100} className="w-[60%]" />
+          {/* todo - stop hardcoding 22 */}
+          <Progress value={(score / 22) * 100} className="w-[60%]" />
         </div>
         <h2 className="p-3 m-4 text-2xl">Questions</h2>
         <div className="grid md:grid-cols-2 place-items-center">
