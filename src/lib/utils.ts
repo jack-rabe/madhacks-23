@@ -37,12 +37,12 @@ export function defineQuestion() {
 export function getCompliment() {
   const niceities = [
     "You betcha! That was a real good job.",
-    "Uff dah! Fantastic job!",
+    "Hey, nice work! You're doing great.",
     "Well done, friend! You really nailed it.",
     "Great job, eh! Keep up the good work.",
     "Good on ya! That was some impressive work.",
     "Way to go, buddy! That's some fine work you did there.",
-    "Jeez Louise! You did a heck of a job.",
+    "Well, I'll be! You did a heck of a job.",
   ];
   const idx = Math.floor(Math.random() * niceities.length);
   return niceities[idx];

@@ -42,7 +42,7 @@ export default function Home() {
             <Card
               key={lesson.seqNumber}
               className={`w-5/6 my-2 ${
-                lesson.seqNumber > score ? "opacity-60" : ""
+                lesson.seqNumber > score ? "bg-slate-300" : ""
               }`}
             >
               <Link
