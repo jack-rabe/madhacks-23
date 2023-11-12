@@ -8,7 +8,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import Navbar from "@/components/navbar";
 import { Question } from "./api/question";
 
 export default function Home() {
@@ -31,7 +30,6 @@ export default function Home() {
   return (
     <>
       <div>
-        <Navbar />
         <h2 className="p-3 m-4 text-2xl">Questions</h2>
         <div className="grid grid-cols-4">
           {lessons.map((lesson) => (
