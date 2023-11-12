@@ -7,11 +7,11 @@ type Props = { question: Question };
 export default function SingleQuestion({ question }: Props) {
   const { user } = useAuth0();
 
-  function handleSelection(selected: string) {
+  async function handleSelection(selected: string) {
     // @ts-ignore
     if (selected === question.correctFields[0]) {
       alert(getCompliment());
-      fetch(`/api/answer/${user?.sub}`, { method: "POST" });
+      await fetch(`/api/answer/${user?.sub}`, { method: "POST" });
       window.location.href = "/";
     } else {
       alert(question.reason || "Ope, not quite. Try again once!");
