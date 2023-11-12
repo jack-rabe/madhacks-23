@@ -33,5 +33,6 @@ export default async function handler(
       seqNumber: question.seq_num,
     };
   });
-  res.status(200).json({ score: user.score || 0, questions: qs });
+  const score = user ? user.score : 0;
+  res.status(200).json({ score: score, questions: qs });
 }
