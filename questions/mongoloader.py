@@ -16,7 +16,7 @@ uri = f"mongodb+srv://{mongo_user}:{mongo_password}@cluster0.29nf6.mongodb.net/?
 client = MongoClient(uri)
 database = client["Madhacks"]
 
-collection_name = "Questions"
+collection_name = "questions"
 collection = database[collection_name]
 
 # List all files in the directory
@@ -32,7 +32,10 @@ for file_name in file_list:
         for json_file in folder_list:
             json_paths.append(path + "/" + json_file)
 
-next_seq_num = collection.find_one({}, sort=[("seq_num", pymongo.DESCENDING)])["seq_num"] + 1
+try:
+    next_seq_num = collection.find_one({}, sort=[("seq_num", pymongo.DESCENDING)])["seq_num"] + 1
+except Exception:
+    next_seq_num = 0
 
 for json_file in json_paths:
     with open(json_file, "r") as json_content:
