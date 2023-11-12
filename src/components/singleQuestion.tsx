@@ -11,7 +11,9 @@ export default function SingleQuestion({ question }: Props) {
     // @ts-ignore
     if (selected === question.correctFields[0]) {
       alert(getCompliment());
-      await fetch(`/api/answer/${user?.sub}`, { method: "POST" });
+      await fetch(`/api/answer/${user?.sub}?score=${question.seqNumber}`, {
+        method: "POST",
+      });
       window.location.href = "/";
     } else {
       alert(question.reason || "Ope, not quite. Try again once!");

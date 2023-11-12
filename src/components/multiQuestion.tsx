@@ -27,7 +27,9 @@ export default function MultiQuestion({ question }: Props) {
 
     // user was correct
     alert(getCompliment());
-    await fetch(`/api/answer/${user?.sub}`, { method: "POST" });
+    await fetch(`/api/answer/${user?.sub}?score=${question.seqNumber}`, {
+      method: "POST",
+    });
     window.location.href = "/";
   }
 

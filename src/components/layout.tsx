@@ -23,7 +23,11 @@ export default function Layout({ children }) {
           </div>
         </>
       ) : (
-        <div>Loading...</div>
+        <>
+          <div className="text-4xl text-center animate-bounce m-8">
+            Loading...
+          </div>
+        </>
       )}
     </div>
   );
