@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useEffect, useState } from "react";
-import { Question } from "./api/question";
+import { Question } from "@/lib/utils";
 
 export default function Home() {
   let [lessons, setLessons] = useState<Question[]>([]);
@@ -25,7 +25,7 @@ export default function Home() {
       .then((res) => {
         setLessons(res);
       });
-  });
+  }, []);
 
   return (
     <>

@@ -1,42 +1,40 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import mongoose from "mongoose";
-
-export type Question = {
-  category: string;
-  type: "single" | "multi" | "match" | "speech";
-  question?: string;
-  availableFields?: string[];
-  correctFields?: string[];
-  disabled?: boolean;
-  reason?: string;
-  seqNumber: number;
-};
+import { Question } from "@/lib/utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Question>,
 ) {
+  const { id } = req.query;
+
   const questionSchema = new mongoose.Schema({
     category: String,
     question: String,
+    reason: String,
+    type: String,
     availableFields: [String],
     correctFields: [String],
-    seqNumber: Number,
+    seq_num: Number,
   });
 
+  await connectToMongo(res);
+  console.log("Connected to Mongo");
   const questionModel =
-    mongoose.models.Question || mongoose.model("Question", questionSchema);
-  connectToMongo(res);
+    mongoose.models.question || mongoose.model("question", questionSchema);
+  const q = await questionModel.findOne({ seq_num: +id! });
   await mongoose.connection.close();
+  console.log("Disconnected from Mongo");
 
-  res.status(200).json({
-    category: "x",
-    type: "single",
-    question: "what is the best beer?",
-    correctFields: ["new glarus"],
-    availableFields: ["new glarus", "miller lite"],
-    seqNumber: 1,
-  });
+  const response: Question = {
+    category: q.category,
+    type: q.type,
+    question: q.question,
+    correctFields: q.correctFields,
+    availableFields: q.availableFields,
+    seqNumber: q.seq_num,
+  };
+  res.status(200).json(response);
 }
 
 export async function connectToMongo(res: NextApiResponse) {
@@ -45,6 +43,6 @@ export async function connectToMongo(res: NextApiResponse) {
   if (!mongo_user || !mongo_password) {
     res.status(404).json({ error: "missing mongo credentials" });
   }
-  const uri = `mongodb+srv://${mongo_user}:${mongo_password}@cluster0.29nf6.mongodb.net/?retryWrites=true&w=majority`;
+  const uri = `mongodb+srv://${mongo_user}:${mongo_password}@cluster0.29nf6.mongodb.net/Madhacks?retryWrites=true&w=majority`;
   await mongoose.connect(uri).catch((err) => console.error(err));
 }
