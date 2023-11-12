@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Lesson() {
-  // TODO getSeqNumber from route to make api call
   const router = useRouter();
   const { id } = router.query;
   const [question, setQuestion] = useState<Question>();

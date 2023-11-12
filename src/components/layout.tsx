@@ -13,7 +13,16 @@ export default function Layout({ children }) {
       {isAuthenticated ? (
         <main>{children}</main>
       ) : !isLoading ? (
-        <Button onClick={() => loginWithRedirect()}>Login</Button>
+        <>
+          <div className="text-center m-4 text-2xl">
+            Log in to start learning what it means to be a Cheesehead
+          </div>
+          <div className="flex justify-center m-4 mt-8">
+            <Button className="text-xl p-4" onClick={() => loginWithRedirect()}>
+              Login
+            </Button>
+          </div>
+        </>
       ) : (
         <div>Loading...</div>
       )}

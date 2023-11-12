@@ -23,7 +23,6 @@ export default function Home() {
         }
       })
       .then((res) => {
-        console.log(res);
         setLessons(res);
       });
   }, []);
@@ -35,8 +34,8 @@ export default function Home() {
         <div className="grid grid-cols-1">
           {lessons.map((lesson) => (
             <Card
-              key={lesson.category}
-              className={`w-3/4 m-2 ${lesson.disabled ? "bg-red-200" : ""}`}
+              key={lesson.seqNumber}
+              className={`w-1/2 m-2 ${lesson.disabled ? "bg-red-200" : ""}`}
             >
               <Link
                 href={`/questions/${lesson.seqNumber}`}
