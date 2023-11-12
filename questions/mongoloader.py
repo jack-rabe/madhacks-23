@@ -5,8 +5,6 @@ from pymongo.server_api import ServerApi
 import os
 import json
 
-print(os.path.dirname(__file__))
-
 load_dotenv(".env.local")
 
 mongo_user = os.getenv("MONGO_USER")
@@ -16,14 +14,6 @@ uri = f"mongodb+srv://{mongo_user}:{mongo_password}@cluster0.29nf6.mongodb.net/?
 
 # Set the Stable API version when creating a new client
 client = MongoClient(uri)
-                          
-# Send a ping to confirm a successful connection
-try:
-    client.admin.command('ping')
-    print("Pinged your deployment. You successfully connected to MongoDB!")
-except Exception as e:
-    print(e)
-
 database = client["Madhacks"]
 
 collection_name = "Questions"
