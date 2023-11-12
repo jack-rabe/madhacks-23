@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder</title>
+</head>
+<body>
+    <h1>Audio Recorder</h1>
+    
+    <p id="prompt">Click to Record</p>
+    <button id="startRecording">O</button>
+    <audio id="audioPlayer" controls></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let mediaRecorder;
+            let recordedChunks = [];
+
+            const startRecordingButton = document.getElementById('startRecording');
+            const prompt = document.getElementById('prompt');
+            const audioPlayer = document.getElementById('audioPlayer');
+
+            startRecordingButton.addEventListener('click', startRecording);
+
+            async function startRecording() {
+                recordedChunks = [];
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    if (event.data.size > 0) {
+                        recordedChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = () => {
+                    const blob = new Blob(recordedChunks, { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(blob);
+                    audioPlayer.src = audioUrl;
+                };
+
+                mediaRecorder.start();
+                prompt.innerHTML = "Speak Now";
+                startRecordingButton.disabled = true;
+
+                setTimeout(stopRecording, 2000)
+            }
+
+            function stopRecording() {
+                if (mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    prompt.innerHTML = "Click to Record";
+                    uploadAudio();
+                    startRecordingButton.disabled = false;
+                }
+
+            }
+
+            function uploadAudio() {
+                const blob = new Blob(recordedChunks, { type: 'audio/wav' });
+                const formData = new FormData();
+                formData.append('audio', blob, 'recorded_audio.wav');
+
+                console.log("Sup mafk");
+                fetch('your_upload_url', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Upload successful:', data);
+                })
+                .catch(error => {
+                    console.error('Error uploading audio:', error);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
