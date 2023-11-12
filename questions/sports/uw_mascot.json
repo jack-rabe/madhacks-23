@@ -1,0 +1,15 @@
+{
+    "category": "sports",
+    "question": "Who is the University of Wisconsin mascot?",
+    "type": "single",
+    "availableFields": [
+        "Bucky the Badger",
+        "Charlie the Cheese Curd",
+        "A Dairy Cow",
+        "Abe Lincoln"
+    ],
+    "correctFields": [
+        "Bucky the Badger"
+    ],
+    "reason": "As cool as Charlie the Cheese Curd would be, Bucky the Badger is as good as it gets."
+}

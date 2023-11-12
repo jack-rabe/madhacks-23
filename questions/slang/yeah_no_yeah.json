@@ -1,0 +1,18 @@
+{
+    "category": "slang",
+    "question": "Match the phrase to what it means.",
+    "type": "match",
+    "availableFields": [
+        "Yeah no",
+        "No yeah",
+        "Yeah no yeah",
+        "Yeah no, yeah"
+    ],
+    "correctFields": [
+        "No",
+        "Yes",
+        "Yes",
+        "No"
+    ],
+    "reason": "No yeah you got the hang of it now."
+}

@@ -1,0 +1,13 @@
+{
+    "category": "food",
+    "question": "Are cheese curds fried?",
+    "type": "single",
+    "availableFields": [
+        "Yes",
+        "No"
+    ],
+    "correctFields": [
+        "Yes"
+    ],
+    "reason": "Unfried cheese curds are just cheese."
+}

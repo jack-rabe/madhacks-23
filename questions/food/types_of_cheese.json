@@ -1,0 +1,18 @@
+{
+    "category": "food",
+    "question": "Which are types of cheese?",
+    "type": "multi",
+    "availableFields": [
+        "Cheddar",
+        "Swiss",
+        "Colby",
+        "Pembine",
+        "Manitowoc"
+    ],
+    "correctFields": [
+        "Cheddar",
+        "Swiss",
+        "Colby"
+    ],
+    "reason": "Pembine and Manitowoc are towns in northern Wisconsin, not types of cheese."
+}

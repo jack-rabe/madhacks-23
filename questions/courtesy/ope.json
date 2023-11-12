@@ -1,0 +1,14 @@
+{
+    "category": "courtesy",
+    "question": "You bump into your neighbor smoking brats as you pass him to get a beer from the cooler at his cookout. What do you say?",
+    "type": "single",
+    "availableFields": [
+        "Sorry",
+        "Ope, my bad didn't mean to bump into ya.",
+        "Excuse Me"
+    ],
+    "correctFields": [
+        "Ope, my bad didn't mean to bump into ya."
+    ],
+    "reason": "If you don't say \"ope\", your actions can be taken as a targeted attack."
+}

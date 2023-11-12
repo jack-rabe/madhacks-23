@@ -1,0 +1,14 @@
+{
+    "category": "lakes",
+    "question": "What is the surfing capital of the midwest?",
+    "type": "multi",
+    "availableFields": [
+        "Superior, WI",
+        "Sheboygan, WI",
+        "Maui, WI"
+    ],
+    "correctFields": [
+        "Sheboygan, WI"
+    ],
+    "reason": "Yes, Sheboygan is the surfing capital of the Midwest"
+}

@@ -1,0 +1,16 @@
+{
+    "category": "sports",
+    "question": "Match the team to the city.",
+    "type": "match",
+    "availableFields": [
+        "Badgers",
+        "Brewers",
+        "Packers"
+    ],
+    "correctFields": [
+        "Madison",
+        "Milwaukee",
+        "Green Bay"
+    ],
+    "reason": "Congrats! You matched the team to the city where they play!"
+}

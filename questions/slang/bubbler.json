@@ -1,0 +1,14 @@
+{
+    "category": "slang",
+    "question": "When you are thirsty, what do you drink from?",
+    "type": "single",
+    "availableFields": [
+        "Drinking Fountain",
+        "Bubbler",
+        "Water Fountain"
+    ],
+    "correctFields": [
+        "Bubbler"
+    ],
+    "reason": "It's called a bubbler. People will be confused if you call it something else."
+}

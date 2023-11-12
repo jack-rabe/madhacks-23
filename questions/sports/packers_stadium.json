@@ -1,0 +1,15 @@
+{
+    "category": "sports",
+    "question": "Where do the Packers play?",
+    "type": "single",
+    "availableFields": [
+        "Camp Randall",
+        "Lambeau Field",
+        "Miller Park",
+        "American Family Field"
+    ],
+    "correctFields": [
+        "Lambeau Field"
+    ],
+    "reason": "Camp Randall is the home of Badger Football, and American Family field (previously Miller Park) is the home of the Milwaukee Brewers."
+}

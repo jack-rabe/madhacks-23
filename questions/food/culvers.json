@@ -1,0 +1,15 @@
+{
+    "category": "food",
+    "question": "What is a popular fast food restaurant started in Wisconsin?",
+    "type": "single",
+    "availableFields": [
+        "McDonalds",
+        "Culvers",
+        "Wendys",
+        "Taco Bell"
+    ],
+    "correctFields": [
+        "Culvers"
+    ],
+    "reason": "Culvers is a religion here."
+}

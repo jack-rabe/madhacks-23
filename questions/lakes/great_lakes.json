@@ -1,0 +1,17 @@
+{
+    "category": "lakes",
+    "question": "What Great Lakes border Wisconsin?",
+    "type": "multi",
+    "availableFields": [
+        "Lake Huron",
+        "Lake Michigan",
+        "Lake Erie",
+        "Lake Superior",
+        "Lake Ontario"
+    ],
+    "correctFields": [
+        "Lake Michigan",
+        "Lake Superior"
+    ],
+    "reason": "Arguably the 2 greatest Great Lakes"
+}

@@ -1,0 +1,18 @@
+{
+    "category": "alcohol",
+    "question": "Which of the listed are good beers?",
+    "type": "multi",
+    "availableFields": [
+        "Coors Light",
+        "New Glarus Spotted Cow",
+        "Miller Lite",
+        "Busch Light"
+    ],
+    "correctFields": [
+        "Coors Light",
+        "New Glarus Spotted Cow",
+        "Miller Lite",
+        "Busch Light"
+    ],
+    "reason": "All beer is good beer."
+}

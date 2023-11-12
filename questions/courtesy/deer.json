@@ -1,0 +1,14 @@
+{
+    "category": "courtesy",
+    "question": "What does your friend mean when he says to \"watch out for deer\"?",
+    "type": "single",
+    "availableFields": [
+        "Let him know if you see any deer because it is hunting season.",
+        "Drive home safe.",
+        "The deer in Wisconsin are carnivorous, so be careful going outside."
+    ],
+    "correctFields": [
+        "Drive home safe."
+    ],
+    "reason": "The roads are a dangerous place."
+}

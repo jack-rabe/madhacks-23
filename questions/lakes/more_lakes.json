@@ -1,0 +1,13 @@
+{
+    "category": "lakes",
+    "question": "Who has more lakes?",
+    "type": "single",
+    "availableFields": [
+        "Wisconsin",
+        "Minnesota"
+    ],
+    "correctFields": [
+        "Wisconsin"
+    ],
+    "reason": "Despite any \"10,000 Lakes\" propaganda you may see, Wisconsin has more lakes."
+}

@@ -1,0 +1,14 @@
+{
+    "category": "courtesy",
+    "question": "If your neighbor says \"Come 'eer quick\" how long can you expect to be gone?",
+    "type": "single",
+    "availableFields": [
+        "10 minutes, he actually meant quick.",
+        "The entire afternoon, now filled with drinking in the garage and talking about tools.",
+        "Until the next day, as you are staying for dinner and eventually a bonfire."
+    ],
+    "correctFields": [
+        "The entire afternoon, now filled with drinking in the garage and talking about tools."
+    ],
+    "reason": "Once you enter the neighbors garage, who knows when you'll be getting out."
+}

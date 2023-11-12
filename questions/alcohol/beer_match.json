@@ -1,0 +1,14 @@
+{
+    "category": "alcohol",
+    "question": "Match the beer with its producer.",
+    "type": "match",
+    "availableFields": [
+        "Spotted Cow",
+        "Summer Shandy"
+    ],
+    "correctFields": [
+        "New Glarus",
+        "Leinenkugel"
+    ],
+    "reason": "New Glarus Spotted Cow and Leinenkugel Summer Shandy are two of the most popular Wisconsin beers."
+}

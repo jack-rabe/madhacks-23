@@ -1,0 +1,16 @@
+{
+    "category": "weather",
+    "question": "What is a cold day?",
+    "type": "multi",
+    "availableFields": [
+        "20 degrees F",
+        "0 degrees F",
+        "-50 degrees F",
+        "10 degrees F, but the Packers lost"
+    ],
+    "correctFields": [
+        "-50 degrees F",
+        "10 degrees F, but the Packers lost"
+    ],
+    "reason": "A Packers loss is a cold day everywhere."
+}

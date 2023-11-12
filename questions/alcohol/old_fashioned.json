@@ -1,0 +1,13 @@
+{
+    "category": "alcohol",
+    "question": "Does an Old Fashioned have Soda Water?",
+    "type": "single",
+    "availableFields": [
+        "Yes",
+        "No"
+    ],
+    "correctFields": [
+        "Yes"
+    ],
+    "reason": "In Wisconsin, an Old Fashioned is a drink, not a tiny cocktail."
+}
