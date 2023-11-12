@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 import { useEffect, useState } from "react";
 import { Question } from "@/lib/utils";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -31,8 +32,12 @@ export default function Home() {
   return (
     <>
       <div>
+        <div className="m-4 flex justify-center">
+          {/* todo - stop hardcoding 24 */}
+          <Progress value={(score / 24) * 100} className="w-[60%]" />
+        </div>
         <h2 className="p-3 m-4 text-2xl">Questions</h2>
-        <div className="grid grid-cols-2 place-items-center">
+        <div className="grid md:grid-cols-2 place-items-center">
           {lessons.map((lesson) => (
             <Card
               key={lesson.seqNumber}
