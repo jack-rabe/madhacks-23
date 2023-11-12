@@ -19,11 +19,11 @@ export default function SingleQuestion({ question }: Props) {
   }
 
   return (
-    <div className="flex items-center flex-col mt-40">
+    <div className="flex items-center flex-col mt-20">
       {question.availableFields!.map((field) => {
         return (
           <Button
-            className="w-3/5 m-4 text-2xl p-8"
+            className="w-4/5 h-24 md:w-3/5 m-4 text-2xl py-16"
             key={field}
             onClick={(e) => handleSelection(field)}
           >
