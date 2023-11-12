@@ -4,6 +4,7 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 import os
 import json
+import random
 
 load_dotenv(".env.local")
 
@@ -31,6 +32,8 @@ for file_name in file_list:
         folder_list = os.listdir(path)
         for json_file in folder_list:
             json_paths.append(path + "/" + json_file)
+
+random.shuffle(json_paths)
 
 try:
     next_seq_num = collection.find_one({}, sort=[("seq_num", pymongo.DESCENDING)])["seq_num"] + 1
