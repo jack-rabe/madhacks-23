@@ -24,7 +24,7 @@ export default function Lesson() {
     <>
       {question && (
         <>
-          <div className="text-5xl p-2 text-center">{question.question}</div>
+          <div className="text-6xl p-8 text-center">{question.question}</div>
           {question.type === "single" && <SingleQuestion question={question} />}
           {question.type === "multi" && <MultiQuestion question={question} />}
           {question.type === "match" && <MatchQuestion question={question} />}

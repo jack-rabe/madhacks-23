@@ -19,7 +19,7 @@ export default function SingleQuestion({ question }: Props) {
   }
 
   return (
-    <div className="flex items-center flex-col">
+    <div className="flex items-center flex-col mt-40">
       {question.availableFields!.map((field) => {
         return (
           <Button

@@ -4,8 +4,7 @@ import { Button } from "./ui/button";
 
 // @ts-ignore
 export default function Layout({ children }) {
-  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
-    useAuth0();
+  const { isAuthenticated, loginWithRedirect, isLoading } = useAuth0();
 
   return (
     <div>
