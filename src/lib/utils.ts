@@ -14,6 +14,11 @@ export type Question = {
   seqNumber: number;
 };
 
+export type User = {
+  id: string;
+  score: number;
+};
+
 export function defineQuestion() {
   const questionSchema = new mongoose.Schema({
     category: String,
@@ -27,6 +32,29 @@ export function defineQuestion() {
   const questionModel =
     mongoose.models.question || mongoose.model("question", questionSchema);
   return questionModel;
+}
+
+export function getCompliment() {
+  const niceities = [
+    "You betcha! That was a real good job.",
+    "Hey, nice work! You're doing great.",
+    "Well done, friend! You really nailed it.",
+    "Great job, eh! Keep up the good work.",
+    "Good on ya! That was some impressive work.",
+    "Way to go, buddy! That's some fine work you did there.",
+    "Well, I'll be! You did a heck of a job.",
+  ];
+  const idx = Math.floor(Math.random() * niceities.length);
+  return niceities[idx];
+}
+
+export function defineUser() {
+  const userSchema = new mongoose.Schema({
+    id: String,
+    score: Number,
+  });
+  const userModel = mongoose.models.user || mongoose.model("user", userSchema);
+  return userModel;
 }
 
 export function cn(...inputs: ClassValue[]) {

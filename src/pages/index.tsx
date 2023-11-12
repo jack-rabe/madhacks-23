@@ -1,17 +1,14 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 import { Question } from "@/lib/utils";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Home() {
   let [lessons, setLessons] = useState<Question[]>([]);
+  const { isAuthenticated, loginWithRedirect, logout, user, isLoading } =
+    useAuth0();
 
   useEffect(() => {
     fetch("/api/questions")
