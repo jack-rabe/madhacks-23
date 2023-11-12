@@ -43,7 +43,9 @@ export default function MatchQuestion({ question }: Props) {
 
     // user was correct
     alert(getCompliment());
-    await fetch(`/api/answer/${user?.sub}`, { method: "POST" });
+    await fetch(`/api/answer/${user?.sub}?score=${question.seqNumber}`, {
+      method: "POST",
+    });
     window.location.href = "/";
   }
 
