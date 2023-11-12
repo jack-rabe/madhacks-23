@@ -32,11 +32,11 @@ export default function Home() {
     <>
       <div>
         <h2 className="p-3 m-4 text-2xl">Questions</h2>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-2 place-items-center">
           {lessons.map((lesson) => (
             <Card
               key={lesson.seqNumber}
-              className={`w-5/6 m-2 ${
+              className={`w-5/6 my-2 ${
                 lesson.seqNumber > score ? "bg-slate-300" : ""
               }`}
             >
@@ -57,7 +57,7 @@ export default function Home() {
                   </Button>
                 )}
                 {lesson.seqNumber < score && (
-                  <div className="bg-green-400 p-2 mr-4">
+                  <div className="bg-green-400 p-2 mr-4 rounded-sm">
                     <CheckIcon />
                   </div>
                 )}
