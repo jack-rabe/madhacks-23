@@ -11,7 +11,7 @@ export default function MultiQuestion({ question }: Props) {
   const [selected, setSelected] = useState<string[]>([]);
   const { user } = useAuth0();
 
-  function handleSelection() {
+  async function handleSelection() {
     const selections = selected.toSorted();
     const expected = question.correctFields?.toSorted()!;
     if (selections.length !== expected!.length) {
@@ -27,7 +27,7 @@ export default function MultiQuestion({ question }: Props) {
 
     // user was correct
     alert(getCompliment());
-    fetch(`/api/answer/${user?.sub}`, { method: "POST" });
+    await fetch(`/api/answer/${user?.sub}`, { method: "POST" });
     window.location.href = "/";
   }
 
