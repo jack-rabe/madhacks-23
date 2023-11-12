@@ -1,11 +1,13 @@
 {
     "category": "pronunciation",
-    "question": "Pronounce \"Oconomowoc\"",
-    "type": "speech",
+    "question": "How do you pronounce \"Oconomowoc\"?",
+    "type": "single",
     "availableFields": [
-
+        "oco-nah-ma-waak",
+        "ow-kaa-nuh-muh-waak",
+        "ow-con-oh-mow-wok"
     ],
     "correctFields": [
-
+        "ow-kaa-nuh-muh-waak"
     ]
 }

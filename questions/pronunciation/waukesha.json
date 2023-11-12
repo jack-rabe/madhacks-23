@@ -1,11 +1,13 @@
 {
     "category": "pronunciation",
     "question": "Pronounce \"Waukesha\"",
-    "type": "speech",
+    "type": "single",
     "availableFields": [
-
+        "wow-keh-shaa",
+        "waa-kee-shaa",
+        "waa-kuh-shaa"
     ],
     "correctFields": [
-
+        "waa-kuh-shaa"
     ]
 }

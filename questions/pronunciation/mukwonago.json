@@ -1,11 +1,13 @@
 {
     "category": "pronunciation",
-    "question": "Pronounce \"Mukwonago\"",
-    "type": "speech",
+    "question": "How do you pronounce \"Mukwonago\"?",
+    "type": "single",
     "availableFields": [
-
+        "mew-kwaan-ego",
+        "muh-kwaa-nuh-gow",
+        "muk-waan-ago"
     ],
     "correctFields": [
-
+        "muh-kwaa-nuh-gow"
     ]
 }
